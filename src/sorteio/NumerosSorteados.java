@@ -1,6 +1,8 @@
 package sorteio;
 
 import java.util.Scanner;
+import java.util.HashSet;
+import java.util.Set;
 
 public class NumerosSorteados {
 	public static void main(String[] args) {
@@ -16,6 +18,15 @@ public class NumerosSorteados {
 		System.out.println("Digite o maior número sorteio: ");
 		int nMaior = sc.nextInt();
 
+		Set<Integer>numerosArray = new HashSet<>();
+
+		int i;
+		for (i = 0; i < n; i++) {
+			double sorteado = Math.random();
+			int numeros = (int) (nMenor + sorteado * (nMaior - nMenor));
+			numerosArray.add(numeros);
+		}
+		System.out.println("Números sorteados: " + numerosArray);
 		
 		sc.close();
 		
